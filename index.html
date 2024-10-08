@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Копіювання сторінки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .content {
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .copied-page {
+            border: 2px dashed #ff5722;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Оригінальний вміст сторінки</h1>
+    <p>Це приклад тексту на сторінці.</p>
+    <button onclick="createPageCopy()">Створити копію сторінки</button>
+</div>
+
+<script>
+    function createPageCopy() {
+        const copiedDiv = document.createElement('div');
+        copiedDiv.classList.add('copied-page');
+
+        const bodyContent = document.body.innerHTML;
+
+        copiedDiv.innerHTML = bodyContent;
+
+        document.body.appendChild(copiedDiv);
+    }
+</script>
+
+</body>
+</html>
